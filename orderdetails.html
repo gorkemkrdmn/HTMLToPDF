@@ -1,0 +1,485 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BSH</title>
+<style>
+    td.max-w {
+        width: 50%;
+        
+    }    
+    
+    .border-bottom { 
+        border-bottom: 1px solid #838383;
+    }
+    .border-right {
+        border-right: 1px solid #838383;
+    }
+</style>
+</head>
+<body>
+    <table cellpadding="0" cellspacing="0" border="0" width="700" align="center">
+        <tr>
+            <td>
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td height="20"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="font-size: 20px; font-family: Arial, sans-serif; font-weight: bold;">SİPARİŞ BİLGİLERİ</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="45"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Sipariş Numarası:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Siparis_Numarasi</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="10" bgcolor="#ffffff">
+                        </td>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Sipariş Tarihi:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Siparis_Tarihi</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="45"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Sipariş Bilgileri</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="20"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Sipariş Veren:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Siparis_Veren</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="10" bgcolor="#ffffff">
+                        </td>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Fatura No:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Fatura_No</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                   <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Müşteri Kodu:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Musteri_Kodu</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="10" bgcolor="#ffffff">
+                        </td>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Müşteri Adı:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Musteri_Adi</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Teslim Alacak:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Teslim_Alinacak</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="10" bgcolor="#ffffff">
+                        </td>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Cep Telefonu:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Cep_Telefonu</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Ev Telefon:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Ev_Telefon</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="10" bgcolor="#ffffff">
+                        </td>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Teknik Servis:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Teknik_Servis</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Sipariş Tipi:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Siparis_Tipi</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="10" bgcolor="#ffffff">
+                        </td>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Bilgi:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Bilgi</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="45"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Çıkış Adres Bilgileri:</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="20"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Adres:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Adres</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="10" bgcolor="#ffffff">
+                        </td>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">İl Adı:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Il_Adi</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                   <td class="max-w"></td>
+                                    <td class="max-w">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="10" bgcolor="#ffffff">
+                        </td>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">İlçe Adı:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Ilce_Adi</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="45"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Teslim Adres Bilgileri:</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="20"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Adres Tipi:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Adres_Tipi</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="10" bgcolor="#ffffff">
+                        </td>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Kat Bilgisi:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Kat_Bilgisi</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                   <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Adres:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Adres</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="10" bgcolor="#ffffff">
+                        </td>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Adres Tarifi:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Adres_Tarifi</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">İl Adı:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Il_Adi</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="10" bgcolor="#ffffff">
+                        </td>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">İlçe Adı:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Ilce_Adi</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="45"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Teslim Bilgileri:</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="20"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">On. Tes. Tarihi:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#On_Teslim_Tarihi</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="10" bgcolor="#ffffff">
+                        </td>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Onay Tarihi:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Onay_Tarihi</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                   <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">İst. Tes. Tarihi:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Ist_Teslim_Tarihi</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="10" bgcolor="#ffffff">
+                        </td>
+                        <td>
+                            <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                                <tr>
+                                    <td class="max-w border-right">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;">Sipariş Notu:</span>
+                                    </td>
+                                    <td class="max-w">
+                                        <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Siparis_Notu</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="45"></td>
+                    </tr>
+                </table>
+                <table cellpadding="15" cellspacing="0" border="0" width="100%" style="border: 1px solid #838383;">
+                    <tr>
+                        <th class="border-right border-bottom">
+                            <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">Ürün Tipi</span>
+                        </th>
+                        <th class="border-right border-bottom">
+                            <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">Ürün Kodu</span>
+                        </th>
+                        <th class="border-right border-bottom">
+                            <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">Ürün Adı</span>
+                        </th>
+                        <th class="border-right border-bottom">
+                            <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">Kurulum</span>
+                        </th>
+                        <th class="border-right border-bottom">
+                            <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">Adet</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center">
+                            <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Urun_Tipi</span>
+                        </td>
+                        <td style="text-align: center">
+                            <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Urun_Kodu</span>
+                        </td>
+                        <td style="text-align: center">
+                            <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Urun_Adi</span>
+                        </td>
+                        <td style="text-align: center">
+                            <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Kurulum</span>
+                        </td>
+                        <td style="text-align: center">
+                            <span style="display: block; font-size: 12px; font-family: Arial, sans-serif;">#Adet</span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

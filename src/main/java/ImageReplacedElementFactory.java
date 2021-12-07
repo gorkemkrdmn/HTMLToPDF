@@ -1,0 +1,75 @@
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import org.apache.commons.io.IOUtils;
+import org.w3c.dom.Element;
+import org.xhtmlrenderer.extend.FSImage;
+import org.xhtmlrenderer.extend.ReplacedElement;
+import org.xhtmlrenderer.extend.ReplacedElementFactory;
+import org.xhtmlrenderer.extend.UserAgentCallback;
+import org.xhtmlrenderer.layout.LayoutContext;
+import org.xhtmlrenderer.pdf.ITextFSImage;
+import org.xhtmlrenderer.pdf.ITextImageElement;
+import org.xhtmlrenderer.render.BlockBox;
+import org.xhtmlrenderer.simple.extend.FormSubmissionListener;
+import com.lowagie.text.BadElementException;
+import com.lowagie.text.Image;
+
+public class ImageReplacedElementFactory implements ReplacedElementFactory {
+
+    @Override
+    public ReplacedElement createReplacedElement(LayoutContext c, BlockBox box, UserAgentCallback uac, int cssWidth,
+                                                 int cssHeight) {
+        Element e = box.getElement();
+        if (e == null) {
+            return null;
+        }
+        String nodeName = e.getNodeName();
+        System.out.println(nodeName);
+        if (nodeName.equals("img")) {
+            String attribute = e.getAttribute("src");
+            FSImage fsImage;
+            try {
+                fsImage = imageForPDF(attribute, uac);
+            } catch (BadElementException e1) {
+                fsImage = null;
+            } catch (IOException e1) {
+                fsImage = null;
+            }
+            if (fsImage != null) {
+                if (cssWidth != -1 || cssHeight != -1) {
+                    fsImage.scale(cssWidth, cssHeight);
+                }else {
+                    fsImage.scale(250, 150);
+                }
+                return new ITextImageElement(fsImage);
+            }
+        }
+        return null;
+    }
+
+    protected FSImage imageForPDF(String attribute, UserAgentCallback uac) throws IOException, BadElementException {
+        InputStream input = null;
+        FSImage fsImage;
+        input = new FileInputStream(attribute);
+        final byte[] bytes = IOUtils.toByteArray(input);
+        final Image image = Image.getInstance(bytes);
+        fsImage = new ITextFSImage(image);
+        return fsImage;
+    }
+
+    @Override
+    public void reset() {
+        // TODO Auto-generated method stub
+    }
+
+    @Override
+    public void remove(Element e) {
+        // TODO Auto-generated method stub
+    }
+
+    @Override
+    public void setFormSubmissionListener(FormSubmissionListener listener) {
+        // TODO Auto-generated method stub
+    }
+}
