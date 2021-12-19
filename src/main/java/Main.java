@@ -8,8 +8,10 @@ public class Main {
         String invoice = "/Users/gorkemkaraduman/Coding/IBM-Code/HTML2PDF/invoice.html";
         String order_details = "/Users/gorkemkaraduman/Coding/IBM-Code/HTML2PDF/orderdetails.html";
         String untitled = "/Users/gorkemkaraduman/Coding/IBM-Code/HTML2PDF/Untitled.html";
+        String qrfile = "/Users/gorkemkaraduman/Coding/IBM-Code/HTML2PDF/qrfile.html";
 //        HTMLToPDF.ConvertHTMLToPDF(html, "/Users/gorkemkaraduman/Coding/IBM-Code/HTML2PDF/output.pdf");
-        HTMLToPDF.ConvertHTMLToPDF(invoice, "/Users/gorkemkaraduman/Coding/IBM-Code/HTML2PDF/invoice.pdf");
+//        HTMLToPDF.ConvertHTMLToPDF(invoice, "/Users/gorkemkaraduman/Coding/IBM-Code/HTML2PDF/invoice.pdf");
+        HTMLToPDF.ConvertHTMLToPDF(qrfile, "/Users/gorkemkaraduman/Coding/IBM-Code/HTML2PDF/qrfile.pdf");
 //        HTMLToPDF.ConvertHTMLToPDF(untitled, "/Users/gorkemkaraduman/Coding/IBM-Code/HTML2PDF/untitled.pdf");
 //        HTMLToPDF.ConvertHTMLToPDF(order_details, "/Users/gorkemkaraduman/Coding/IBM-Code/HTML2PDF/order_details.pdf");
     }
