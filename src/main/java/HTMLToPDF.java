@@ -89,12 +89,12 @@ public class HTMLToPDF {
         SharedContext sharedContext = renderer.getSharedContext();
         sharedContext.setPrint(true);
         sharedContext.setInteractive(false);
-        sharedContext.setReplacedElementFactory(new ImageReplacedElementFactory());
+        sharedContext.setReplacedElementFactory(new B64ImgReplacedElementFactory());
         sharedContext.getTextRenderer().setSmoothingThreshold(0);
         String fontpath = "fonts/arial-unicode-ms.ttf".replace("/", File.separator);
         String fontpath_tnr = "fonts/times-new-roman.ttf".replace("/", File.separator);
-        renderer.getFontResolver().addFont(fontpath_tnr, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
         try {
+            renderer.getFontResolver().addFont(fontpath_tnr, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
             renderer.getFontResolver().addFont(GORKEM_LOCAL_PATH + "Butterfly.ttf", true);
         } catch (IOException e) {
             e.printStackTrace();
