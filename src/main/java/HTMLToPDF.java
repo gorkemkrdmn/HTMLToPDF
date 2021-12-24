@@ -6,6 +6,7 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import com.lowagie.text.pdf.BaseFont;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -37,7 +38,7 @@ public class HTMLToPDF {
 
 
     public static void ConvertHTMLToPDF(String input_HTML_path, String output_pdf_path){
-        AdjustLayout(input_HTML_path);
+        AdjustLayoutFixFont(input_HTML_path);
         try {
             String XHTML = HTMLToXHTML(input_HTML_path);
             XHTMLToPDF(XHTML, output_pdf_path);
@@ -47,7 +48,7 @@ public class HTMLToPDF {
         }
     }
 
-    private static void AdjustLayout(String input_HTML_path){
+    private static void AdjustLayoutFixFont(String input_HTML_path){
         File input = new File(input_HTML_path);
         Document doc = null;
         try {
@@ -55,8 +56,11 @@ public class HTMLToPDF {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Elements css = doc.select("style");
+        css.prepend("* { font-family: 'Times New Roman';}");
         doc.select("table[width=800]").attr("width", "100%");
         doc.select("#notesTable").attr("width", "100%") ; // a with href
+        doc.select("#notesTableTd").attr("height", "30");
         doc.select("script").remove(); // remove Javascript
         try { // Write to file
             FileUtils.writeStringToFile(input, doc.outerHtml(), StandardCharsets.UTF_8);
@@ -87,6 +91,9 @@ public class HTMLToPDF {
         sharedContext.setInteractive(false);
         sharedContext.setReplacedElementFactory(new ImageReplacedElementFactory());
         sharedContext.getTextRenderer().setSmoothingThreshold(0);
+        String fontpath = "fonts/arial-unicode-ms.ttf".replace("/", File.separator);
+        String fontpath_tnr = "fonts/times-new-roman.ttf".replace("/", File.separator);
+        renderer.getFontResolver().addFont(fontpath_tnr, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
         try {
             renderer.getFontResolver().addFont(GORKEM_LOCAL_PATH + "Butterfly.ttf", true);
         } catch (IOException e) {
