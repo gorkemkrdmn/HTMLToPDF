@@ -1,13 +1,17 @@
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.w3c.tidy.Tidy;
 import org.xhtmlrenderer.layout.SharedContext;
 import org.xhtmlrenderer.pdf.ITextRenderer;
@@ -33,11 +37,30 @@ public class HTMLToPDF {
 
 
     public static void ConvertHTMLToPDF(String input_HTML_path, String output_pdf_path){
+        AdjustLayout(input_HTML_path);
         try {
             String XHTML = HTMLToXHTML(input_HTML_path);
             XHTMLToPDF(XHTML, output_pdf_path);
         } catch (IOException e) {
             // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    private static void AdjustLayout(String input_HTML_path){
+        File input = new File(input_HTML_path);
+        Document doc = null;
+        try {
+            doc = Jsoup.parse(input, "UTF-8");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        doc.select("table[width=800]").attr("width", "100%");
+        doc.select("#notesTable").attr("width", "100%") ; // a with href
+        doc.select("script").remove(); // remove Javascript
+        try { // Write to file
+            FileUtils.writeStringToFile(input, doc.outerHtml(), StandardCharsets.UTF_8);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -85,6 +108,4 @@ public class HTMLToPDF {
             System.out.println("PDF creation completed");
         }
     }
-
-
 }

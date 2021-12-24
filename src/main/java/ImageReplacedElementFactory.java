@@ -25,7 +25,6 @@ public class ImageReplacedElementFactory implements ReplacedElementFactory {
             return null;
         }
         String nodeName = e.getNodeName();
-        System.out.println(nodeName);
         if (nodeName.equals("img")) {
             String attribute = e.getAttribute("src");
             FSImage fsImage;
